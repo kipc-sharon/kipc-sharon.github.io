@@ -1,0 +1,431 @@
+<!-- ══════════ LOCK GATE ══════════ -->
+<div id="lock-gate">
+  <div class="lock-box">
+    <div class="lock-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </svg>
+    </div>
+    <p class="lock-label">HTB ACTIVE MACHINE</p>
+    <p class="lock-sub">This writeup is locked per HackTheBox policy.<br>Active machine writeups are not publicly shared.</p>
+    <div class="lock-input-row">
+      <input id="lock-password" type="password" placeholder="Enter password" autocomplete="off" />
+      <button id="lock-submit">UNLOCK</button>
+    </div>
+    <p id="lock-error">Incorrect password</p>
+  </div>
+</div>
+
+<!-- ══════════ SECURITY GATE ══════════ -->
+<div id="sec-gate">
+  <div class="sec-box">
+    <div class="sec-header">
+      <span class="sec-dot red"></span>
+      <span class="sec-dot yellow"></span>
+      <span class="sec-dot green"></span>
+      <span class="sec-title">access_check.sh</span>
+    </div>
+    <div id="sec-loading">
+      <div id="sec-load-lines"></div>
+      <div class="sec-progress-bar"><div id="sec-progress-fill"></div></div>
+    </div>
+    <div id="sec-challenge" style="display:none">
+      <p class="sec-prompt-label">$ <span id="sec-type"></span></p>
+      <p id="sec-prompt" class="sec-prompt"></p>
+      <pre id="sec-display" class="sec-display"></pre>
+      <div id="sec-text-row" class="sec-input-row" style="display:none">
+        <span class="sec-caret">&gt;</span>
+        <input id="sec-text-input" type="text" placeholder="your answer" autocomplete="off" spellcheck="false" />
+        <button id="sec-text-submit">ENTER</button>
+      </div>
+      <div id="sec-choices" class="sec-choices" style="display:none"></div>
+      <p id="sec-error" class="sec-error"></p>
+      <p id="sec-hint" class="sec-hint"></p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SESSION EXPIRY TOAST ══════════ -->
+<div id="expiry-toast">
+  <span class="expiry-icon">⚠</span>
+  <span>Session expiring in <strong id="expiry-count">30</strong>s</span>
+  <button id="expiry-renew">Renew</button>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var SESSION_MS  = 5 * 60 * 1000;   // 5 minutes
+  var WARNING_S   = 30;               // warn 30s before expiry
+
+  /* ─── SHA-256 ─────────────────────────────────────── */
+  function sha256(msg) {
+    return crypto.subtle.digest('SHA-256', new TextEncoder().encode(msg))
+      .then(function (buf) {
+        return Array.from(new Uint8Array(buf))
+          .map(function (b) { return b.toString(16).padStart(2, '0'); })
+          .join('');
+      });
+  }
+
+  /* ─── CHALLENGES ──────────────────────────────────── */
+  var CHALLENGES = [
+    {
+      type: 'BASE64 DECODE',
+      prompt: 'Decode this Base64 string:',
+      display: 'aGVsbG8=',
+      mode: 'text',
+      answer: 'hello',
+      hint: 'A common five-letter greeting.'
+    },
+    {
+      type: 'TOOL KNOWLEDGE',
+      prompt: 'Which tool scans for open ports and running services?',
+      display: '$ ____ -sC -sV 10.10.10.1 -oN scan.txt',
+      mode: 'choice',
+      choices: [
+        { text: 'nmap',      correct: true  },
+        { text: 'netcat',    correct: false },
+        { text: 'burpsuite', correct: false },
+        { text: 'curl',      correct: false }
+      ]
+    },
+    {
+      type: 'TOOL KNOWLEDGE',
+      prompt: 'Which tool captures and analyzes network packets?',
+      display: '[Capturing on eth0]  filter: tcp port 80',
+      mode: 'choice',
+      choices: [
+        { text: 'Wireshark',  correct: true  },
+        { text: 'nmap',       correct: false },
+        { text: 'Metasploit', correct: false },
+        { text: 'sqlmap',     correct: false }
+      ]
+    },
+    {
+      type: 'LINUX BASICS',
+      prompt: 'Which flag lists ALL files (including hidden) with full details?',
+      display: '$ ls ____ /home/user/',
+      mode: 'choice',
+      choices: [
+        { text: '-la', correct: true  },
+        { text: '-r',  correct: false },
+        { text: '-h',  correct: false },
+        { text: '-v',  correct: false }
+      ]
+    },
+    {
+      type: 'PORT KNOWLEDGE',
+      prompt: 'What is the default port for SSH?',
+      display: '$ ssh sharon@target.htb -p ????',
+      mode: 'choice',
+      choices: [
+        { text: '22',   correct: true  },
+        { text: '80',   correct: false },
+        { text: '443',  correct: false },
+        { text: '3306', correct: false }
+      ]
+    },
+    {
+      type: 'PORT KNOWLEDGE',
+      prompt: 'What port does HTTP run on by default?',
+      display: 'http://target.htb:????/api/v1/users',
+      mode: 'choice',
+      choices: [
+        { text: '80',   correct: true  },
+        { text: '22',   correct: false },
+        { text: '443',  correct: false },
+        { text: '8443', correct: false }
+      ]
+    }
+  ];
+
+  /* ─── LOCK GATE ───────────────────────────────────── */
+  /* No session persistence — every visit requires the key */
+  function initLockGate() {
+    if (!window.__pageLocked) return;
+
+    var gate   = document.getElementById('lock-gate');
+    var pwEl   = document.getElementById('lock-password');
+    var errEl  = document.getElementById('lock-error');
+
+    gate.classList.add('active');
+    document.body.classList.add('gate-active');
+    pwEl.focus();
+
+    function attempt() {
+      var pw = pwEl.value.trim();
+      if (!pw) return;
+      sha256(pw).then(function (hash) {
+        if (hash === window.__pagePasswordHash) {
+          gate.classList.remove('active');
+          document.body.classList.remove('gate-active');
+          /* intentionally no sessionStorage — re-locks on every visit */
+        } else {
+          errEl.classList.add('visible');
+          pwEl.value = '';
+          pwEl.focus();
+          setTimeout(function () { errEl.classList.remove('visible'); }, 1800);
+        }
+      });
+    }
+
+    document.getElementById('lock-submit').addEventListener('click', attempt);
+    pwEl.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') attempt();
+      errEl.classList.remove('visible');
+    });
+  }
+
+  /* ─── SECURITY GATE ───────────────────────────────── */
+  function showSecGate(onPass) {
+    var gate          = document.getElementById('sec-gate');
+    var loadEl        = document.getElementById('sec-loading');
+    var loadLines     = document.getElementById('sec-load-lines');
+    var progressFill  = document.getElementById('sec-progress-fill');
+    var challengeEl   = document.getElementById('sec-challenge');
+    var textRow       = document.getElementById('sec-text-row');
+    var choicesEl     = document.getElementById('sec-choices');
+    var errEl         = document.getElementById('sec-error');
+
+    /* reset */
+    loadLines.innerHTML   = '';
+    choicesEl.innerHTML   = '';
+    progressFill.style.transition = 'none';
+    progressFill.style.width      = '0%';
+    loadEl.style.display       = 'block';
+    challengeEl.style.display  = 'none';
+    textRow.style.display      = 'none';
+    choicesEl.style.display    = 'none';
+    errEl.className            = 'sec-error';
+    document.getElementById('sec-text-input').value = '';
+    document.getElementById('sec-hint').textContent  = '';
+
+    gate.classList.add('active');
+    document.body.classList.add('gate-active');
+
+    /* loading lines */
+    var msgs = [
+      { t: '> Initializing security protocol...', d: 0     },
+      { t: '> Verifying access permissions...',   d: 520   },
+      { t: '> Generating challenge query...',      d: 1040  },
+      { t: '> Challenge ready. Awaiting input.',   d: 1560, pink: true }
+    ];
+
+    msgs.forEach(function (m) {
+      setTimeout(function () {
+        var p = document.createElement('p');
+        p.className = 'sec-load-line' + (m.pink ? ' pink' : '');
+        p.textContent = m.t;
+        loadLines.appendChild(p);
+      }, m.d);
+    });
+
+    /* progress bar */
+    setTimeout(function () {
+      progressFill.style.transition = 'width 1.7s ease-out';
+      progressFill.style.width = '100%';
+    }, 80);
+
+    /* show challenge at 2.2s */
+    setTimeout(function () {
+      loadEl.style.display      = 'none';
+      challengeEl.style.display = 'block';
+
+      var c = CHALLENGES[Math.floor(Math.random() * CHALLENGES.length)];
+      document.getElementById('sec-type').textContent    = c.type;
+      document.getElementById('sec-prompt').textContent  = c.prompt;
+      document.getElementById('sec-display').textContent = c.display;
+      if (c.hint) document.getElementById('sec-hint').textContent = '// hint: ' + c.hint;
+
+      function fail() {
+        errEl.classList.add('visible');
+        setTimeout(function () { errEl.classList.remove('visible'); }, 1800);
+      }
+
+      function pass() {
+        gate.classList.remove('active');
+        document.body.classList.remove('gate-active');
+        onPass();
+      }
+
+      if (c.mode === 'text') {
+        var inp = document.getElementById('sec-text-input');
+        textRow.style.display = 'flex';
+        function tryText() {
+          if (inp.value.trim().toLowerCase() === c.answer) pass();
+          else { inp.value = ''; fail(); }
+        }
+        document.getElementById('sec-text-submit').onclick = tryText;
+        inp.onkeydown = function (e) { if (e.key === 'Enter') tryText(); };
+        setTimeout(function () { inp.focus(); }, 60);
+      }
+
+      if (c.mode === 'choice') {
+        choicesEl.style.display = 'flex';
+        c.choices.forEach(function (ch) {
+          var btn = document.createElement('button');
+          btn.className = 'sec-choice-btn';
+          btn.textContent = ch.text;
+          btn.onclick = function () { if (ch.correct) pass(); else fail(); };
+          choicesEl.appendChild(btn);
+        });
+      }
+    }, 2200);
+  }
+
+  /* ─── EXPIRY TIMER ────────────────────────────────── */
+  var _expiryTimer = null;
+
+  function startExpiryTimer(remainingMs) {
+    if (_expiryTimer) clearTimeout(_expiryTimer);
+    var warnAt = remainingMs - WARNING_S * 1000;
+    if (warnAt > 0) {
+      _expiryTimer = setTimeout(function () { showExpiryToast(WARNING_S); }, warnAt);
+    } else if (remainingMs > 0) {
+      showExpiryToast(Math.ceil(remainingMs / 1000));
+    } else {
+      sessionStorage.removeItem('sg_time');
+    }
+  }
+
+  function showExpiryToast(startCount) {
+    var toast    = document.getElementById('expiry-toast');
+    var countEl  = document.getElementById('expiry-count');
+    var renewBtn = document.getElementById('expiry-renew');
+    var count    = startCount || WARNING_S;
+
+    toast.classList.add('visible');
+    countEl.textContent = count;
+
+    var iv = setInterval(function () {
+      count--;
+      countEl.textContent = count;
+      if (count <= 0) {
+        clearInterval(iv);
+        toast.classList.remove('visible');
+        sessionStorage.removeItem('sg_time');
+        if (window.__securityGate) { location.reload(); }
+      }
+    }, 1000);
+
+    renewBtn.onclick = function () {
+      clearInterval(iv);
+      toast.classList.remove('visible');
+      sessionStorage.setItem('sg_time', String(Date.now()));
+      startExpiryTimer(SESSION_MS);
+    };
+  }
+
+  /* ─── CANVAS RAIN ─────────────────────────────────── */
+  function initBgCanvas() {
+    if (document.getElementById('bg-canvas')) return;
+    var canvas = document.createElement('canvas');
+    canvas.id  = 'bg-canvas';
+    document.body.appendChild(canvas);
+
+    var ctx  = canvas.getContext('2d');
+    var fs   = 13;
+    var drops = [];
+
+    function resize() {
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+      var cols = Math.floor(canvas.width / fs);
+      drops = Array.from({ length: cols }, function () { return Math.random() * -80; });
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    var chars = '0123456789ABCDEFabcdef:./-\\';
+    var lastTs = 0;
+
+    (function draw(ts) {
+      requestAnimationFrame(draw);
+      if (ts - lastTs < 65) return;
+      lastTs = ts;
+
+      ctx.fillStyle = 'rgba(5,5,15,0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.font = fs + 'px monospace';
+
+      drops.forEach(function (y, i) {
+        var c = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillStyle = Math.random() > 0.97
+          ? 'rgba(142, 115, 91, 0.65)'
+          : 'rgba(181, 201, 154, 0.1)';
+        ctx.fillText(c, i * fs, y * fs);
+        if (y * fs > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i] += 0.35;
+      });
+    })(0);
+  }
+
+  /* ─── ROLE TYPEWRITER ─────────────────────────────── */
+  function initRoles() {
+    var headline = document.querySelector('article header h2');
+    if (!headline) return;
+    if (document.getElementById('profile-roles')) return;
+
+    var div = document.createElement('div');
+    div.id        = 'profile-roles';
+    div.className = 'profile-roles';
+    div.innerHTML = '<span class="role-cursor">❯</span><span id="role-text"></span><span class="role-blink">_</span>';
+    headline.parentNode.insertBefore(div, headline.nextSibling);
+
+    var roles = ['Security Analyst', 'API Pentester', 'CTF Player'];
+    var el = document.getElementById('role-text');
+    var idx = 0, ci = 0, del = false;
+
+    function tick() {
+      var r = roles[idx];
+      if (!del) {
+        el.textContent = r.substring(0, ci + 1);
+        ci++;
+        if (ci === r.length) { del = true; setTimeout(tick, 1900); return; }
+        setTimeout(tick, 115);
+      } else {
+        el.textContent = r.substring(0, ci - 1);
+        ci--;
+        if (ci === 0) { del = false; idx = (idx + 1) % roles.length; }
+        setTimeout(tick, del ? 55 : 115);
+      }
+    }
+    setTimeout(tick, 600);
+  }
+
+  /* ─── INIT ────────────────────────────────────────── */
+  document.addEventListener('DOMContentLoaded', function () {
+    /* Lock gate always checked */
+    initLockGate();
+
+    var sgTime    = parseInt(sessionStorage.getItem('sg_time') || '0');
+    var sgElapsed = sgTime ? Date.now() - sgTime : SESSION_MS + 1;
+    var sgValid   = sgElapsed < SESSION_MS;
+
+    if (window.__securityGate) {
+      if (sgValid) {
+        startExpiryTimer(SESSION_MS - sgElapsed);
+        initBgCanvas();
+        initRoles();
+      } else {
+        sessionStorage.removeItem('sg_time');
+        showSecGate(function () {
+          sessionStorage.setItem('sg_time', String(Date.now()));
+          startExpiryTimer(SESSION_MS);
+          initBgCanvas();
+          initRoles();
+        });
+      }
+    } else {
+      /* Non-home pages: still manage expiry notification */
+      if (sgValid) {
+        startExpiryTimer(SESSION_MS - sgElapsed);
+      }
+    }
+  });
+
+})();
+</script>

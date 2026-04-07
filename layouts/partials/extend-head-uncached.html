@@ -1,0 +1,9 @@
+{{ if .Params.locked }}
+<script>
+  window.__pageLocked = true;
+  window.__pagePasswordHash = "{{ .Params.lockPasswordHash }}";
+</script>
+{{ end }}
+{{ if .Params.securityGate }}
+<script>window.__securityGate = true;</script>
+{{ end }}

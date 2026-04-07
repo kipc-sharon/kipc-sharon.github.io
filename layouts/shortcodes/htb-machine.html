@@ -1,0 +1,26 @@
+<div class="htb-machine-card">
+  {{ with .Get "image" }}
+  <div class="htb-machine-banner">
+    <img src="{{ . }}" alt="{{ $.Get "name" }}" />
+  </div>
+  {{ end }}
+  <div class="htb-machine-meta">
+    <span class="htb-machine-name">{{ .Get "name" }}</span>
+    <div class="htb-machine-tags">
+      {{ with .Get "difficulty" }}
+      <span class="htb-tag htb-diff-{{ . | lower }}">{{ . }}</span>
+      {{ end }}
+      {{ with .Get "os" }}
+      <span class="htb-tag htb-os">
+        {{ if eq (. | lower) "linux" }}🐧{{ else if eq (. | lower) "windows" }}🪟{{ end }} {{ . }}
+      </span>
+      {{ end }}
+      {{ with .Get "points" }}
+      <span class="htb-tag">{{ . }} pts</span>
+      {{ end }}
+      {{ with .Get "retired" }}
+      <span class="htb-tag htb-retired">{{ if eq . "true" }}✓ Retired{{ else }}🔒 Active{{ end }}</span>
+      {{ end }}
+    </div>
+  </div>
+</div>
