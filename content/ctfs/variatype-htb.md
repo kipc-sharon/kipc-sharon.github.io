@@ -2,14 +2,13 @@
 title: "VariaType — HackTheBox"
 date: 2026-03-21
 categories: ["CTFs"]
-tags: ["htb", "active", "linux", "rce", "git-exposure", "cve", "path-traversal", "privilege-escalation"]
+tags: ["htb", "linux", "rce", "git-exposure", "cve", "path-traversal", "privilege-escalation"]
 summary: "Medium Linux machine — exposed .git repo leaks credentials, CVE-2025-66034 (FontTools RCE) for initial access, CVE-2024-25082 for lateral movement to steve, path traversal in install_validator.py for root."
 featureimage: "img/ctf/variatype.png"
-locked: true
-lockPasswordHash: "8e724603cf84971c6f73d0853890b5b1e4264509239f0e22198a8b35e466ce1c"
+locked: false
 ---
 
-{{< htb-machine name="VariaType" image="/img/VariaType.png" difficulty="Medium" os="Linux" retired="false" >}}
+{{< htb-machine name="VariaType" image="/img/VariaType.png" difficulty="Medium" os="Linux" retired="true" >}}
 
 ## Overview
 
