@@ -7,7 +7,7 @@ description: "Security Analyst | Red Team | Blue Team | API Pentesting"
 
 I started in backend development — writing APIs, enforcing access control, hardening systems. That foundation changed how I think about security: not just where things break, but *why* they were built that way in the first place.
 
-I am actively seeking roles in **red team operations**, **blue team / SOC analysis**, and **API security testing**. Whether the work is offensive or defensive, my goal is the same — understand the threat, document it precisely, and help close the gap.
+I am currently an **IT Intern at Kenindia Assurance Company Limited**, where I support end users on core insurance systems and have started applying a security lens to enterprise infrastructure — including a hands-on assessment of the organisation's IP telephony estate. Alongside this, I am actively seeking roles in **red team operations**, **blue team / SOC analysis**, and **API security testing**. Whether the work is offensive or defensive, my goal is the same — understand the threat, document it precisely, and help close the gap.
 
 My practice spans hands-on API assessments, CTF challenges on Hack The Box and TryHackMe, and structured security training through CyberShujaa. I write public writeups, build lab environments, and stay close to the techniques that matter.
 
@@ -79,6 +79,20 @@ My practice spans hands-on API assessments, CTF challenges on Hack The Box and T
 <div class="exp-timeline">
 
   <div class="exp-entry">
+    <p class="exp-role">Information Technology Intern</p>
+    <p class="exp-company">Kenindia Assurance Company Limited &mdash; Internship</p>
+    <span class="exp-duration">May 2026 &ndash; Present &middot; On-site</span>
+    <ul>
+      <li>Provide first-line IT support and ticket-based end-user support on core insurance systems — troubleshooting hardware, software, Windows, networking, and Microsoft 365 issues to ensure timely incident resolution.</li>
+      <li>Configure, deploy, and maintain desktops, laptops, printers, and IP phones, including system setup, software installation, and user account configuration.</li>
+      <li>Assist with network troubleshooting — diagnosing TCP/IP, DNS, DHCP, and IP telephony connectivity issues to maintain reliable business operations.</li>
+      <li>Conducted a security assessment of the organisation's IP phone infrastructure, identifying deprecated SSL/TLS protocols, weak cipher suites, and devices using default administrative credentials.</li>
+      <li>Developed and executed Python automation scripts to identify vulnerable IP phones and support remediation by updating default credentials — improving the organisation's security posture.</li>
+      <li>Log, track, and document incidents, troubleshooting procedures, and security findings via the organisation's ticketing and documentation systems, collaborating cross-functionally to implement security recommendations.</li>
+    </ul>
+  </div>
+
+  <div class="exp-entry">
     <p class="exp-role">Backend Systems Developer</p>
     <p class="exp-company">Lish AI Labs &mdash; Contract</p>
     <span class="exp-duration">May 2025 &ndash; August 2025 &middot; Nakuru, Kenya</span>
@@ -140,6 +154,9 @@ My practice spans hands-on API assessments, CTF challenges on Hack The Box and T
   <span class="skill-tag">Threat Detection</span>
   <span class="skill-tag">System Hardening</span>
   <span class="skill-tag">CTF</span>
+  <span class="skill-tag">IT Support</span>
+  <span class="skill-tag">Network Troubleshooting</span>
+  <span class="skill-tag">Python Automation</span>
   <span class="skill-tag orange">CyberShujaa Certificate</span>
   <span class="skill-tag orange">API Security Certification</span>
 </div>
