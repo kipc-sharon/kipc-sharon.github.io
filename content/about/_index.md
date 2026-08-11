@@ -118,7 +118,7 @@ My practice spans hands-on API assessments, CTF challenges on Hack The Box and T
       <li>Performed hands-on network scanning and service enumeration using Nmap — identified and documented exploitable misconfigurations.</li>
       <li>Practised SOC workflows including threat detection, log analysis, and incident triage using real-world simulation scenarios.</li>
       <li>Produced technical security reports communicating findings to both technical and non-technical audiences.</li>
-      <li>Earned CyberShujaa certificate upon completion.</li>
+      <li>Earned Security Analyst certification <strong>with Distinction</strong> (Cohort XI, sponsored by the Challenge Fund for Youth Employment).</li>
     </ul>
   </div>
 
@@ -186,13 +186,20 @@ My practice spans hands-on API assessments, CTF challenges on Hack The Box and T
 
 <details>
 <summary>📁 CyberShujaa</summary>
-<em>Certificate will be added here.</em>
+<ul>
+  <li><a href="/img/certs/cybershujaa-security-analyst.jpeg" target="_blank">Security Analyst — With Distinction (Cohort XI)</a></li>
+</ul>
 </details>
+
+<ul>
+  <li><a href="/cv/Sharon_Kipsang_Resume.pdf" target="_blank">📄 Download Full CV / Resume (PDF)</a></li>
+</ul>
 
 ---
 
 <div class="not-prose">
 <p class="section-label">Contact</p>
+<a class="cv-download-btn" href="/cv/Sharon_Kipsang_Resume.pdf" target="_blank">⬇ Download CV (PDF)</a>
 <div class="contact-grid">
   <div class="contact-item">
     <span class="ci-icon">📧</span>

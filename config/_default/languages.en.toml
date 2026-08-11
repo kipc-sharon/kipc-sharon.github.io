@@ -21,6 +21,7 @@ title = "M1ssByt3"
     { github = "https://github.com/kipc-sharon" },
     { linkedin = "https://www.linkedin.com/in/sharon-kipsang" },
     { twitter = "https://twitter.com/sharon_kipsang" },
+    { download = "/cv/Sharon_Kipsang_Resume.pdf" },
   ]
 
 # [params.author]

@@ -743,6 +743,29 @@ body.gate-active { overflow: hidden; }
 }
 .contact-item a:hover { text-decoration: underline; }
 
+/* ── CV Download Button ──────────────────────────────── */
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--teal-border);
+  border-radius: 6px;
+  color: var(--teal);
+  background: var(--teal-dim);
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none !important;
+  transition: border-color 0.15s, color 0.15s;
+}
+.cv-download-btn:hover {
+  border-color: var(--teal);
+  color: var(--sand);
+}
+
 /* ── Home Page — Profile ──────────────────────────────── */
 /* Author name (M1ssByt3) */
 article header h1 {
