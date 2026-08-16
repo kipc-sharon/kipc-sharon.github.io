@@ -8,7 +8,7 @@ featureimage: "img/ctf/CARNAGE/carnage-hero.png"
 locked: false
 ---
 
-![Screenshot](/img/ctf/CARNAGE/carnage-hero.png)
+{{< htb-machine name="CARNAGE" image="/img/ctf/CARNAGE/carnage-hero.png" difficulty="Medium" os="Windows" retired="false" >}}
 
 Apply your analytical skills to analyze the malicious network traffic using Wireshark.
 
