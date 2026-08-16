@@ -4,7 +4,7 @@ date: 2026-08-16
 categories: ["CTFs"]
 tags: ["ctf", "wireshark", "network-forensics", "malware", "incident-response", "packet-analysis"]
 summary: "A full walkthrough of the THM CARNAGE packet-analysis challenge, tracing malicious downloads, C2 infrastructure, and post-infection behavior from a Windows endpoint PCAP."
-featureimage: "/img/VariaType.png"
+featureimage: "img/ctf/CARNAGE/Pasted image 20260813033842.png"
 locked: false
 ---
 
