@@ -1,0 +1,132 @@
+SHARON KIPSANG
+IT Support Specialist | Technical Support | Compliance Systems
+kipc.sharon@gmail.com • +254 111 410 391 • Nairobi, Kenya • LinkedIn
+
+PROFESSIONAL SUMMARY
+
+IT Support professional with hands-on experience in first-line technical support, ticketing systems, and end-user assistance.
+Current IT Support Specialist at Kenindia Assurance Company Limited, providing support on core insurance systems.
+Strong foundation in Windows OS, networking, troubleshooting, and documentation. Adaptable problem-solver with
+demonstrated ability to learn quickly and resolve both routine and moderately complex technical issues.
+
+KEY COMPETENCIES
+
+TECHNICAL SKILLS
+• Windows OS Support & Configuration
+• Ticketing Systems & Case Management
+• Network Troubleshooting (TCP/IP, DNS, DHCP)
+• Help Desk & First-Line Support
+• Documentation & Knowledge Management
+• Basic Database Administration (PostgreSQL)
+• Active Directory & User Management
+• Microsoft 365 (Outlook, Teams, SharePoint)
+• Hardware/Software Troubleshooting
+• Linux System Administration
+
+SUPPORT COMPETENCIES
+• Customer Communication (Technical & Non-Technical)
+• Problem-Solving & Root Cause Analysis
+• Multi-Channel Support (Phone, Email, Chat, Screen-Share)
+• Issue Reproduction & Testing
+• Process Adherence & Quality Standards
+• Documentation & Clear Communication
+• Critical Thinking & Analytical Skills
+• Self-Directed Learning
+• Time Management & Task Prioritization
+
+PROFESSIONAL EXPERIENCE
+
+KENINDIA ASSURANCE COMPANY LTD — Nairobi, Kenya
+IT Support Specialist | May 2026 – Present (4 months)
+
+• Provide first-line IT support for desktops, laptops, printers, and mobile devices; troubleshoot hardware and
+  software issues ensuring timely resolution for end-users on core insurance systems.
+• Manage Active Directory user accounts, groups, organizational units, and Group Policy configurations for
+  consistent user access and security.
+• Support Windows OS environments with updates, driver installation, and performance optimization.
+• Administer Microsoft 365 services (Outlook, Teams, OneDrive/SharePoint) including user and license management.
+• Configure and troubleshoot network connectivity issues (TCP/IP, DNS/DHCP, Wi-Fi/VPN) and support network
+  switches and routers.
+• Log, track, and resolve support requests via ticketing system, maintaining detailed knowledge base and
+  documentation of solutions.
+• Collaborate with cross-functional teams to resolve technical issues and implement security recommendations
+  efficiently.
+• Conduct security assessment of organization's IP phone infrastructure, identifying deprecated protocols and
+  weak configurations, and developed Python automation scripts to remediate vulnerable devices.
+
+LISH AI LABS — Nakuru, Kenya
+Backend Systems Developer Intern | May 2025 – October 2025
+
+• Administered PostgreSQL databases including schema design, user role configuration, and least-privilege access control.
+• Maintained Linux-based backend infrastructure, resolving deployment and service issues with clear documentation.
+• Identified and mitigated authentication and authorization vulnerabilities during development, reducing OWASP
+  Top 10 exposure.
+
+EDUCATION
+
+Technical University of Mombasa
+BSc. Statistics and Computer Science | September 2016 – February 2021
+
+CERTIFICATIONS & TRAINING
+
+• CyberShujaa Security Analyst — Oct – Dec 2025 (Awarded With Distinction, Cohort XI)
+  - Network security, system hardening, vulnerability management, incident response, threat detection
+
+• CyberShujaa / Cisco Ethical Hacker — Oct – Dec 2024
+  - Comprehensive cybersecurity fundamentals and ethical hacking principles
+
+• API Security Certifications (Dec 2025 – Mar 2026)
+  - API Security Fundamentals
+  - API Penetration Testing
+  - API Authentication Security
+  - API Gateway Security
+  - Secure API Servers
+  - API Security for PCI Compliance
+
+TECHNICAL PROJECTS & PRACTICAL EXPERIENCE
+
+IP Phone Security Automation — Kenindia Assurance
+• Developed and executed Python automation script to scan organizational IP phone network and detect
+  devices using default/factory passwords.
+• Identified and documented IP phones and endpoints running deprecated TLS/SSL versions for remediation.
+
+Network Troubleshooting & System Analysis
+• Hands-on experience with Nmap for network scanning and service enumeration.
+• Diagnosed and documented TCP/IP, DNS, DHCP connectivity issues in live production environments.
+• Performed system hardening and access control configuration.
+
+Technical Incident Response & Forensics
+• Conducted Windows forensic investigation analyzing Event Viewer, Task Scheduler, and system logs.
+• Documented findings and created detailed technical reports for non-technical and technical audiences.
+
+CTF & Practical Security Labs
+• Active participation in Hack The Box and TryHackMe challenges covering Windows administration,
+  network systems, and IT infrastructure analysis.
+• Practical labs on Advent of Cyber 2025 and incident response scenarios.
+
+SOFT SKILLS
+
+• Excellent Verbal & Written Communication
+• Problem-Solving & Root Cause Analysis
+• Time Management & Prioritization
+• Customer Service & End-User Support
+• Collaboration & Team Coordination
+• Self-Motivation & Continuous Learning
+• Attention to Detail & Accuracy
+• Adaptability in Fast-Paced Environments
+• Critical Thinking
+• Patience & Empathy
+
+PROFICIENCY IN TOOLS
+
+Microsoft Office Suite • Google Applications • Active Directory • Windows Server • Linux (Ubuntu/Debian/Kali)
+PostgreSQL • Networking Tools (TCP/IP, DNS/DHCP) • Task Scheduler • Event Viewer • PowerShell
+Ticketing Systems & Help Desk Tools • Nmap • Burp Suite
+
+LANGUAGES
+
+English (Fluent) • Swahili (Native)
+
+REFERENCES
+
+Available upon request
