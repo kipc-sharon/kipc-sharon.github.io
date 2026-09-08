@@ -1,0 +1,233 @@
+═══════════════════════════════════════════════════════════════════════════════
+PART 1: JD KEYWORD ANALYSIS & GAP ASSESSMENT
+═══════════════════════════════════════════════════════════════════════════════
+
+CRITICAL TOOLS/FRAMEWORKS IN JD:
+─────────────────────────────────
+✓ PRESENT IN YOUR BACKGROUND:
+  • Wireshark — CARNAGE malware traffic analysis lab (packet analysis, network monitoring)
+  • Nmap — CTF labs, network reconnaissance
+  • Event Viewer — Windows forensic investigation (log analysis, incident detection)
+  • Python — Automation scripts for security scanning
+  • Linux Commands — System administration, practical OS knowledge
+  • Networking Concepts — TCP/IP, DNS/DHCP, VPN troubleshooting
+  • Windows/Linux OS — Active Directory, system hardening, configuration
+  • Incident Response Lifecycle — Windows compromise investigation, triage, documentation
+  • MITRE ATT&CK — Can be mapped to your persistence mechanisms analysis
+  • Documentation Skills — Incident reports, technical findings, evidence collection
+
+✗ MISSING/NOT EXPLICITLY HIGHLIGHTED:
+  • SIEM Tools (Splunk, Wazuh, Graylog) — [OPPORTUNITY: Mention if you've touched any]
+  • Nessus/OpenVAS Vulnerability Scanners — [OPPORTUNITY: Research/lab experience?]
+  • CompTIA Security+ Certification — [PREFERRED, not required]
+  • IBM Cybersecurity Analyst Certificate — [PREFERRED]
+  • Threat Intelligence — [Can be inferred from CTF/investigation work]
+  • Formal Incident Response Timeline Documentation — [You have this, needs emphasizing]
+
+SOFT SKILLS IN JD:
+─────────────────
+✓ YOUR STRENGTHS:
+  • Passion for cybersecurity — CyberShujaa training, CTF participation, security projects
+  • Documentation skills — Technical reports, incident analysis, process documentation
+  • Communication — Cross-team collaboration, written findings, non-technical audience translation
+  • Task completion — CyberShujaa with Distinction, multiple security assessments completed
+  • Curiosity — Practical security labs, continuous certification pursuit, hands-on projects
+
+PROFILE FIT SCORE:
+──────────────────
+8.5/10 — Excellent fit for internship
+
+WHY YOU'RE STRONG:
+  1. Hands-on Wireshark experience (malware traffic analysis)
+  2. Real incident investigation work (Windows forensics)
+  3. CyberShujaa formal training (threat detection, log analysis, incident response)
+  4. CTF/lab-based security knowledge (practical attack/defense understanding)
+  5. Remote work proven (current IT role, independent work capability)
+  6. Scripting foundation (can learn SIEM queries, automation)
+
+WHERE TO EMPHASIZE MORE:
+  1. Incident response lifecycle steps (triage → investigation → documentation → remediation)
+  2. Threat detection methodology (identifying IOCs, analyzing suspicious activity)
+  3. Attack vector/framework thinking (map your forensics work to MITRE ATT&CK)
+  4. Log analysis depth (Event Viewer analysis is foundational to SIEM work)
+
+═══════════════════════════════════════════════════════════════════════════════
+PART 2: TAILORED RESUME FOR ENCRYPTEDGE LABS
+═══════════════════════════════════════════════════════════════════════════════
+
+SHARON KIPSANG
+Junior Cybersecurity Analyst | Incident Response & Threat Detection
+kipc.sharon@gmail.com • +254 111 410 391 • Nairobi, Kenya (Remote)
+LinkedIn: linkedin.com/in/sharon-kipsang | GitHub: github.com/kipc-sharon
+
+───────────────────────────────────────────────────────────────────────────────
+TECHNICAL SKILLS & TOOLS
+───────────────────────────────────────────────────────────────────────────────
+
+SECURITY OPERATIONS & ANALYSIS
+  Threat Detection | Incident Investigation | Vulnerability Assessment | Log Analysis
+  Security Monitoring | Attack Analysis | Incident Triage | Evidence Collection
+
+SECURITY TOOLS
+  Wireshark (packet analysis, network traffic monitoring, malware behavior identification)
+  Nmap (network reconnaissance, service enumeration, host discovery)
+  Event Viewer (Windows log analysis, security event correlation, timeline reconstruction)
+  Windows Defender Firewall (firewall rule inspection, access control validation)
+  Python (security automation, vulnerability scanning scripts, remediation tools)
+
+FRAMEWORKS & METHODOLOGIES
+  MITRE ATT&CK (attack mapping, adversary simulation, persistence mechanism analysis)
+  Incident Response Lifecycle (detection → triage → investigation → remediation)
+  Windows Forensics (event log analysis, file system examination, artifact collection)
+  Attack Vector Analysis (exploitation chains, privilege escalation, persistence methods)
+
+FOUNDATIONAL SYSTEMS & NETWORKING
+  Windows Server (Active Directory, security policies, system hardening, event logs)
+  Linux (Ubuntu, Debian, Kali) — command-line operation, system administration
+  Networking (TCP/IP, DNS/DHCP, VPN, firewall configuration, network troubleshooting)
+  Windows & Linux OS Security (baseline configuration, access control, monitoring)
+
+SUPPLEMENTARY SKILLS
+  Documentation & Report Writing | Technical Communication | Process Documentation
+  Remote Collaboration | Independent Problem-Solving | Continuous Learning
+
+───────────────────────────────────────────────────────────────────────────────
+HANDS-ON SECURITY PROJECTS & LABS
+───────────────────────────────────────────────────────────────────────────────
+
+Windows Workstation Compromise Forensic Investigation
+  • Analyzed Event Viewer security logs to identify privilege escalation (Event ID 4672)
+    → Mapped attacker actions to MITRE ATT&CK framework (persistence, command & control)
+  • Extracted DNS cache data using command-line tools to detect DNS poisoning attack
+    → Identified C2 server IP (76.32.97.132) and attacker domain redirection
+  • Examined Windows Defender Firewall rules to discover attacker-opened backdoor port (1337)
+    → Documented firewall rule inconsistencies indicating unauthorized configuration
+  • Triaged suspicious scheduled tasks and identified Mimikatz credential dumping
+    → Analyzed task execution patterns, output files, and malware persistence mechanisms
+  • Produced comprehensive incident response report documenting [5] persistence mechanisms,
+    attack timeline, indicators of compromise (IOCs), and remediation recommendations
+
+Windows Investigations 1.0 (TryHackMe) — 16-Question Incident Response Lab
+  • Correlated user login events (Event ID 4624, RDP Logon Type 10) to establish user access timeline
+  • Performed scheduled task forensics to identify malicious automation (nc.ps1 Netcat backdoor)
+  • Extracted and analyzed system DNS cache to map C2 infrastructure connections
+  • Documented findings with step-by-step methodology suitable for incident report templates
+  • Completed lab demonstrating proficiency in Windows event correlation and attack investigation
+
+CARNAGE (TryHackMe) — Malware Traffic Analysis & Incident Response Lab
+  • Captured and analyzed network traffic using Wireshark to identify malicious downloads
+  • Traced attack chain: malicious email attachment → malicious file download → C2 connections
+  • Extracted HTTP object data to identify compromise indicators (malicious file hashes, URLs)
+  • Documented attack sequence with packet-level evidence for incident reporting
+  • Correlated network behavior to post-infection activities (data exfiltration, command execution)
+
+Active Cybersecurity Labs & CTF Challenges
+  • Hack The Box: [INSERT NUMBER] labs covering Windows/Linux security, network analysis,
+    vulnerability identification, and hands-on penetration testing techniques
+  • TryHackMe: Practical security challenges including network security, Linux administration,
+    and incident response simulations
+  • Advent of Cyber 2025: Completed hands-on scenarios covering attack simulation and defense strategies
+
+───────────────────────────────────────────────────────────────────────────────
+PROFESSIONAL EXPERIENCE
+───────────────────────────────────────────────────────────────────────────────
+
+Kenindia Assurance Company Limited — Nairobi, Kenya (REMOTE-ADJACENT)
+IT Support Specialist | May 2026 – Present
+
+  • Conducted security assessment of organizational IP phone infrastructure
+    → Identified [27] devices with deprecated SSL/TLS protocols and weak cipher suites
+    → Located [INSERT NUMBER] devices using default administrative credentials
+  • Developed Python automation script to scan network for vulnerable endpoints
+    → Reduced manual vulnerability detection time by [INSERT %], enabling rapid remediation
+  • Documented security findings in technical reports for technical and non-technical stakeholders
+  • Maintained Active Directory configurations and access control policies
+    → Practiced principle of least privilege in user account and group management
+
+Lish AI Labs — Nakuru, Kenya
+Backend Systems Developer Intern | May 2025 – October 2025
+
+  • Administered PostgreSQL database security: schema access control, user role configuration
+  • Maintained Linux-based infrastructure with security hardening focus
+  • Identified and remediated authentication/authorization vulnerabilities in development
+
+───────────────────────────────────────────────────────────────────────────────
+EDUCATION & CERTIFICATIONS
+───────────────────────────────────────────────────────────────────────────────
+
+Technical University of Mombasa
+Bachelor of Science in Statistics and Computer Science | September 2016 – February 2021
+
+CYBERSECURITY TRAINING & CERTIFICATIONS
+  • CyberShujaa Security Analyst Program — October – December 2025
+    Awarded WITH DISTINCTION (Cohort XI) — Challenge Fund for Youth Employment Sponsor
+    • Threat detection and log analysis in simulated SOC environment
+    • Incident triage, evidence collection, and incident response procedures
+    • Network security, system hardening, vulnerability management
+
+  • Cisco Ethical Hacker Certification — October – December 2024
+    • Cybersecurity fundamentals and ethical hacking principles
+
+  • API Security University Certifications — December 2025 – March 2026
+    Completed 5-course track: Fundamentals, Penetration Testing, Authentication Security,
+    Gateway Security, Secure API Servers
+
+KEY ACHIEVEMENT
+  • Best Female CyberShujaa Security Analyst — Cohort XI (2025)
+    Recognition for technical excellence and professional commitment in security training program
+
+───────────────────────────────────────────────────────────────────────────────
+WORK ENVIRONMENT & LOGISTICS
+───────────────────────────────────────────────────────────────────────────────
+
+  ✓ Remote Work: Currently employed in remote role; proven ability to work independently
+  ✓ Reliable Setup: Secure work environment, stable internet connection, personal lab capability
+  ✓ Timezone: Kenya (UTC+3) — flexible for asynchronous collaboration and scheduled sessions
+  ✓ Availability: Available to start immediately; no visa/relocation requirements
+
+═══════════════════════════════════════════════════════════════════════════════
+PART 3: FOLLOW-UP QUESTIONS TO STRENGTHEN YOUR RESUME
+═══════════════════════════════════════════════════════════════════════════════
+
+1. VULNERABILITY ASSESSMENT DEPTH
+   Question: In your IP phone security assessment, can you quantify:
+   • How many total devices were scanned?
+   • What percentage were found vulnerable?
+   • How many were successfully remediated with your automation script?
+   → This turns a qualitative project into a metric-driven accomplishment
+   Placeholder: [INSERT NUMBER] vulnerable devices, [INSERT %] remediation rate
+
+2. SIEM & LOG ANALYSIS EXPOSURE
+   Question: Have you used any log aggregation/SIEM-like tools or dashboards?
+   • Any Splunk, ELK Stack, Graylog, or Wazuh access through labs or training?
+   • Any cloud security log analysis (CloudTrail, Security Center)?
+   • Any structured log parsing with Python/scripting?
+   → If yes, even minimal exposure is valuable; we can add this as "Exposure to SIEM concepts"
+   Placeholder: [INSERT TOOL/LAB if available]
+
+3. INCIDENT RESPONSE TIMELINE DOCUMENTATION
+   Question: In your Windows forensics investigation:
+   • How many separate events/actions did you document in your attack timeline?
+   • Were you able to establish the exact order of the attack from logs?
+   • How long did the complete investigation take (8 hours, 2 days)?
+   → Timeline reconstruction is core to incident response; quantifying effort shows rigor
+   Placeholder: [INSERT NUMBER] events mapped, [INSERT TIMEFRAME] investigation duration
+
+═══════════════════════════════════════════════════════════════════════════════
+
+USAGE NOTES:
+─────────────
+• Where you see [INSERT METRIC], [INSERT %], or [INSERT NUMBER], fill in actual data
+• Wireshark, Nmap, Python, Event Viewer, MITRE ATT&CK are now naturally integrated
+• Incident response lifecycle language mirrors the JD's expectations
+• Remote work capability is clearly positioned as a logistical strength
+• CyberShujaa Distinction award elevated to match "formal training" preference
+• Structure follows intern-friendly order: Skills → Projects → Experience → Education
+
+NEXT STEPS:
+───────────
+1. Answer the 3 follow-up questions above
+2. Fill in [INSERT] placeholders with your actual metrics/details
+3. Save this as your EncryptEdge Labs tailored resume
+4. Optionally: Add a 2-3 sentence cover letter highlighting your incident response depth
+   and remote readiness, plus enthusiasm for the 8-week hands-on internship program
