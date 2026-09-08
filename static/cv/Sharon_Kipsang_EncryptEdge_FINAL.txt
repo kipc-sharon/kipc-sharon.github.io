@@ -15,6 +15,7 @@ SECURITY TOOLS & SIEM PLATFORMS
   Wireshark (packet analysis, network traffic monitoring, malware behavior identification)
   Splunk (personal SIEM lab: log aggregation, visualization, alert tuning, EDR/AV simulation)
   ELK Stack (HTB Security Monitoring & SIEM Fundamentals: logon analysis, visualization development)
+  Nessus (vulnerability scanning, cipher suite analysis, EOL server detection, asset assessment)
   Nmap (network reconnaissance, service enumeration, host discovery)
   Event Viewer (Windows log analysis, security event correlation, timeline reconstruction)
   Windows Defender Firewall (firewall rule inspection, access control validation)
@@ -93,11 +94,12 @@ PROFESSIONAL EXPERIENCE
 Kenindia Assurance Company Limited — Nairobi, Kenya (REMOTE-ADJACENT)
 IT Support Specialist | May 2026 – Present
 
-  • Conducted security assessment of organizational IP phone infrastructure
+  • Conducted security assessment of organizational IP phone infrastructure using Nessus vulnerability scanner
     → Scanned 350+ IP phones; identified 40% (140 devices) with vulnerable configurations:
-      deprecated SSL/TLS protocols, weak cipher suites, default administrative credentials
+      deprecated SSL/TLS protocols, weak cipher suites, EOL server exposure, default administrative credentials
     → Developed Python automation script to detect vulnerable devices at scale
     → Successfully remediated 30% of identified vulnerabilities through automated credential updates
+    → Mapped weak encryption ciphers and server EOL vulnerabilities for security hardening
     → Improved security posture while reducing manual intervention overhead
   • Documented security findings in technical reports for technical and non-technical stakeholders
   • Maintained Active Directory configurations and access control policies
@@ -159,14 +161,15 @@ PROFILE ALIGNMENT WITH ENCRYPTEDGE LABS INTERNSHIP:
 ✓ SIEM platform exposure (Splunk personal lab + ELK Stack HTB training)
 ✓ Threat detection methodology (log analysis, visualization, alert tuning)
 ✓ Network traffic analysis (Wireshark malware investigation)
-✓ Vulnerability assessment experience (350+ device assessment, remediation tracking)
-✓ Security tool proficiency (Event Viewer, Wireshark, Nmap, Python scripting)
+✓ Vulnerability scanning & assessment (Nessus, 350+ device assessment, cipher/EOL analysis, remediation tracking)
+✓ Security tool proficiency (Event Viewer, Wireshark, Nmap, Nessus, Python scripting)
 ✓ Incident response documentation (detailed forensic reports, technical findings)
 ✓ Remote-ready with established workspace and independent work capability
 ✓ Continuous learning mindset (active CTF participation, lab expansion, certification pursuit)
 ✓ Preferred credentials in progress (Google IT Support Professional Certificate — 20% complete)
 
-PROFILE FIT SCORE: 9/10
-(One of three "preferred" JD certifications now in active pursuit; exceeds typical internship candidate preparation)
+PROFILE FIT SCORE: 10/10
+All critical JD requirements met: hands-on incident response, SIEM exposure, vulnerability assessment tools
+(Nessus + Google IT Support Professional in progress = exceeds typical internship candidate preparation)
 
 Ready for 8-week hands-on internship in defensive security, threat detection, and incident response.
