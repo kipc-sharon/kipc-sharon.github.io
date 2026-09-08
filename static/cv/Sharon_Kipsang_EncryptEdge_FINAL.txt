@@ -134,6 +134,9 @@ CYBERSECURITY TRAINING & CERTIFICATIONS
   • HTB Security Monitoring & SIEM Fundamentals Module
     • Interactive SIEM visualization development and query construction
 
+  • Google IT Support Professional Certificate — In Progress (20% Complete)
+    Foundational IT support, troubleshooting, and systems administration training
+
 KEY ACHIEVEMENT
   • Best Female CyberShujaa Security Analyst — Cohort XI (2025)
     Recognition for technical excellence and professional commitment in security training program
@@ -161,5 +164,9 @@ PROFILE ALIGNMENT WITH ENCRYPTEDGE LABS INTERNSHIP:
 ✓ Incident response documentation (detailed forensic reports, technical findings)
 ✓ Remote-ready with established workspace and independent work capability
 ✓ Continuous learning mindset (active CTF participation, lab expansion, certification pursuit)
+✓ Preferred credentials in progress (Google IT Support Professional Certificate — 20% complete)
+
+PROFILE FIT SCORE: 9/10
+(One of three "preferred" JD certifications now in active pursuit; exceeds typical internship candidate preparation)
 
 Ready for 8-week hands-on internship in defensive security, threat detection, and incident response.
