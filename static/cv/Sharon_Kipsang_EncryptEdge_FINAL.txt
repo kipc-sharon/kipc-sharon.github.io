@@ -1,0 +1,165 @@
+SHARON KIPSANG
+Junior Cybersecurity Analyst | Incident Response & Threat Detection
+kipc.sharon@gmail.com • +254 111 410 391 • Nairobi, Kenya (Remote)
+LinkedIn: linkedin.com/in/sharon-kipsang | GitHub: github.com/kipc-sharon
+
+───────────────────────────────────────────────────────────────────────────────
+TECHNICAL SKILLS & TOOLS
+───────────────────────────────────────────────────────────────────────────────
+
+SECURITY OPERATIONS & ANALYSIS
+  Threat Detection | Incident Investigation | Vulnerability Assessment | Log Analysis
+  Security Monitoring | Attack Analysis | Incident Triage | Evidence Collection
+
+SECURITY TOOLS & SIEM PLATFORMS
+  Wireshark (packet analysis, network traffic monitoring, malware behavior identification)
+  Splunk (personal SIEM lab: log aggregation, visualization, alert tuning, EDR/AV simulation)
+  ELK Stack (HTB Security Monitoring & SIEM Fundamentals: logon analysis, visualization development)
+  Nmap (network reconnaissance, service enumeration, host discovery)
+  Event Viewer (Windows log analysis, security event correlation, timeline reconstruction)
+  Windows Defender Firewall (firewall rule inspection, access control validation)
+  Python (security automation, log parsing, vulnerability scanning scripts, remediation tools)
+
+FRAMEWORKS & METHODOLOGIES
+  MITRE ATT&CK (attack mapping, adversary simulation, persistence mechanism analysis)
+  Incident Response Lifecycle (detection → triage → investigation → remediation)
+  Windows Forensics (event log analysis, file system examination, artifact collection)
+  Attack Vector Analysis (exploitation chains, privilege escalation, persistence methods)
+  SIEM Visualization & Alert Development (logon patterns, group membership changes, service account monitoring)
+
+FOUNDATIONAL SYSTEMS & NETWORKING
+  Windows Server (Active Directory, security policies, system hardening, event logs)
+  Linux (Ubuntu, Debian, Kali) — command-line operation, system administration
+  Networking (TCP/IP, DNS/DHCP, VPN, firewall configuration, network troubleshooting)
+  Windows & Linux OS Security (baseline configuration, access control, monitoring)
+
+SUPPLEMENTARY SKILLS
+  Documentation & Report Writing | Technical Communication | Process Documentation
+  Remote Collaboration | Independent Problem-Solving | Continuous Learning
+
+───────────────────────────────────────────────────────────────────────────────
+HANDS-ON SECURITY PROJECTS & LABS
+───────────────────────────────────────────────────────────────────────────────
+
+Windows Workstation Compromise Forensic Investigation
+  • Analyzed Event Viewer security logs to identify privilege escalation (Event ID 4672)
+    → Mapped 15+ separate attack events to MITRE ATT&CK framework (persistence, C2, lateral movement)
+  • Extracted DNS cache data using command-line tools to detect DNS poisoning attack
+    → Identified C2 server IP (76.32.97.132) and attacker domain redirection (www.google.com)
+  • Examined Windows Defender Firewall rules to discover attacker-opened backdoor port (1337)
+    → Documented 5 persistence mechanisms across scheduled tasks, firewall rules, and web shell deployment
+  • Triaged suspicious scheduled tasks and identified Mimikatz credential dumping (mim.exe)
+    → Analyzed task execution patterns, output files, and malware persistence mechanisms
+  • Reconstructed complete attack timeline with precise event ordering and timestamps
+    → Established compromise date (03/02/2019) and privilege escalation time (04:04:49 PM)
+  • Produced comprehensive 6-page incident response report documenting IOCs, remediation guidance,
+    and detection logic for network-wide hunting
+
+Windows Investigations 1.0 (TryHackMe) — 16-Question Incident Response Lab
+  • Correlated user login events (Event ID 4624, RDP Logon Type 10) to establish user access timeline
+  • Performed scheduled task forensics to identify malicious automation (nc.ps1 Netcat backdoor)
+  • Extracted and analyzed system DNS cache to map C2 infrastructure connections
+  • Documented findings with step-by-step methodology suitable for incident report templates
+  • Completed lab demonstrating proficiency in Windows event correlation and attack investigation
+
+CARNAGE (TryHackMe) — Malware Traffic Analysis & Incident Response Lab
+  • Captured and analyzed network traffic using Wireshark to identify malicious downloads
+  • Traced attack chain: malicious email attachment → malicious file download → C2 connections
+  • Extracted HTTP object data to identify compromise indicators (malicious file hashes, URLs)
+  • Documented attack sequence with packet-level evidence for incident reporting
+  • Correlated network behavior to post-infection activities (data exfiltration, command execution)
+
+SIEM Lab & Log Analysis Training
+  • Developed personal Splunk SIEM lab for hands-on threat detection and alert tuning
+    → Simulated EDR and antivirus scenarios to practice detection and remediation workflows
+    → Ongoing lab expansion: detecting attack scenarios on end-user systems, analyzing alert fidelity
+  • Completed HTB's Security Monitoring & SIEM Fundamentals module covering:
+    → SIEM Visualization: failed logon attempts (all users, disabled users), suspicious RDP activity
+    → Service Account Monitoring: RDP logons correlated to service account behavior
+    → Group Membership Changes: tracking users added/removed from local groups within timeframes
+  • Developed practical SIEM queries and visualizations for real-world threat scenarios
+
+Active Cybersecurity Labs & CTF Challenges
+  • Hack The Box: Multiple labs covering Windows/Linux security, network analysis,
+    vulnerability identification, and hands-on penetration testing techniques
+  • TryHackMe: Practical security challenges including network security, Linux administration,
+    and incident response simulations
+  • Advent of Cyber 2025: Completed hands-on scenarios covering attack simulation and defense strategies
+
+───────────────────────────────────────────────────────────────────────────────
+PROFESSIONAL EXPERIENCE
+───────────────────────────────────────────────────────────────────────────────
+
+Kenindia Assurance Company Limited — Nairobi, Kenya (REMOTE-ADJACENT)
+IT Support Specialist | May 2026 – Present
+
+  • Conducted security assessment of organizational IP phone infrastructure
+    → Scanned 350+ IP phones; identified 40% (140 devices) with vulnerable configurations:
+      deprecated SSL/TLS protocols, weak cipher suites, default administrative credentials
+    → Developed Python automation script to detect vulnerable devices at scale
+    → Successfully remediated 30% of identified vulnerabilities through automated credential updates
+    → Improved security posture while reducing manual intervention overhead
+  • Documented security findings in technical reports for technical and non-technical stakeholders
+  • Maintained Active Directory configurations and access control policies
+    → Practiced principle of least privilege in user account and group management
+
+Lish AI Labs — Nakuru, Kenya
+Backend Systems Developer Intern | May 2025 – October 2025
+
+  • Administered PostgreSQL database security: schema access control, user role configuration
+  • Maintained Linux-based infrastructure with security hardening focus
+  • Identified and remediated authentication/authorization vulnerabilities in development
+
+───────────────────────────────────────────────────────────────────────────────
+EDUCATION & CERTIFICATIONS
+───────────────────────────────────────────────────────────────────────────────
+
+Technical University of Mombasa
+Bachelor of Science in Statistics and Computer Science | September 2016 – February 2021
+
+CYBERSECURITY TRAINING & CERTIFICATIONS
+  • CyberShujaa Security Analyst Program — October – December 2025
+    Awarded WITH DISTINCTION (Cohort XI) — Challenge Fund for Youth Employment Sponsor
+    • Threat detection and log analysis in simulated SOC environment
+    • Incident triage, evidence collection, and incident response procedures
+    • Network security, system hardening, vulnerability management
+
+  • Cisco Ethical Hacker Certification — October – December 2024
+    • Cybersecurity fundamentals and ethical hacking principles
+
+  • API Security University Certifications — December 2025 – March 2026
+    Completed 5-course track: Fundamentals, Penetration Testing, Authentication Security,
+    Gateway Security, Secure API Servers
+
+  • HTB Security Monitoring & SIEM Fundamentals Module
+    • Interactive SIEM visualization development and query construction
+
+KEY ACHIEVEMENT
+  • Best Female CyberShujaa Security Analyst — Cohort XI (2025)
+    Recognition for technical excellence and professional commitment in security training program
+
+───────────────────────────────────────────────────────────────────────────────
+WORK ENVIRONMENT & LOGISTICS
+───────────────────────────────────────────────────────────────────────────────
+
+  ✓ Remote Work: Currently employed in remote role; proven ability to work independently
+  ✓ Reliable Setup: Secure work environment, stable internet connection, personal lab capability
+  ✓ SIEM Lab: Personal Splunk SIEM lab for hands-on threat detection and alert tuning
+  ✓ Timezone: Kenya (UTC+3) — flexible for asynchronous collaboration and scheduled sessions
+  ✓ Availability: Available to start immediately; no visa/relocation requirements
+
+───────────────────────────────────────────────────────────────────────────────
+
+PROFILE ALIGNMENT WITH ENCRYPTEDGE LABS INTERNSHIP:
+
+✓ Hands-on incident response experience (Windows forensics, attack reconstruction, IOC identification)
+✓ SIEM platform exposure (Splunk personal lab + ELK Stack HTB training)
+✓ Threat detection methodology (log analysis, visualization, alert tuning)
+✓ Network traffic analysis (Wireshark malware investigation)
+✓ Vulnerability assessment experience (350+ device assessment, remediation tracking)
+✓ Security tool proficiency (Event Viewer, Wireshark, Nmap, Python scripting)
+✓ Incident response documentation (detailed forensic reports, technical findings)
+✓ Remote-ready with established workspace and independent work capability
+✓ Continuous learning mindset (active CTF participation, lab expansion, certification pursuit)
+
+Ready for 8-week hands-on internship in defensive security, threat detection, and incident response.
